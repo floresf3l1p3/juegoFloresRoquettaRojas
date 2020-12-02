@@ -8,8 +8,7 @@
 *Daniel Rojas; FAI-951
 ******************************************/
 
-//HOLA, BORRAR ESTO
-//hola
+
 
 
 /**
@@ -467,7 +466,7 @@ function infoPrimerPuntaje($coleccionJuegos,$coleccionPalabras)// punto 19
  */
 function mostrarPorOrden($coleccionPalabras)// REVISAR punto 20 no se si esta bien ...
 {
-    uasort($coleccionPalabras,"cmp");//Ordena un array con una función de comparación definida por el usuario y mantiene la asociación de índices
+    asort($coleccionPalabras);//Ordena un array con una función de comparación definida por el usuario y mantiene la asociación de índices
     print_r($coleccionPalabras);//informacion sobre los elementos del array de una manera legible
 }
 /**

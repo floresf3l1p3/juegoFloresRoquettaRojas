@@ -337,7 +337,6 @@ function jugar($coleccionPalabras, $indicePalabra, $cantIntentos){//punto 14
     $palabraFueDescubierta=false;
     //Mostrar pista:
     echo"pista " .$coleccionPalabras[$indicePalabra]["pista"]."\n";
-    echo"pista ".$coleccionPalabras[$indicePalabra]["pista"]."\n";
     $descubiertas= array();
     //solicitar letras mientras haya intentos y la palabra no haya sido descubierta:
     do {

@@ -146,14 +146,14 @@ function existeLetra($coleccionLetras,$letra ){//punto 6
     /*>>> Completar cuerpo de la función <<<*/
     //int $i, $cantLetras
     //boolean $existe
-    echo"#".$letra;
+    
     $i=0;
     $cantLetras = count($coleccionLetras);//count — Cuenta todos los elementos de un array o algo de un objeto.
     $existe = false;
     echo $cantLetras;
     while ($i < $cantLetras && !$existe) {
              echo $coleccionLetras[$i]["letra"];
-        $existe = $coleccionLetras[$i]["letra"] === $letra;
+        $existe = $coleccionLetras[$i]["letra"] == $letra;
         echo $existe;
         $i=$i+1;
     }
@@ -334,11 +334,8 @@ function jugar($coleccionPalabras, $indicePalabra, $cantIntentos){//punto 14
     /*>>> Completar el cuerpo de la función, respetando lo indicado en la documentacion <<<*/
     $palabraFueDescubierta=false;
     //Mostrar pista:
-<<<<<<< HEAD
     echo"pista " .$coleccionPalabras[$indicePalabra]["pista"]."\n";
-=======
     echo"pista ".$coleccionPalabras[$indicePalabra]["pista"]."\n";
->>>>>>> 5e181c2fa27e9de400976892969e4e1ddcfcb549
     $descubiertas= array();
     //solicitar letras mientras haya intentos y la palabra no haya sido descubierta:
     do {
@@ -352,11 +349,7 @@ function jugar($coleccionPalabras, $indicePalabra, $cantIntentos){//punto 14
             $coleccionLetras=$descubiertas;
         }else {
             $cantIntentos--;
-<<<<<<< HEAD
             echo"la letra: ".$letra ." no pertenece a la palabra. QUEDAN ".$cantIntentos." INTENTOS \n";
-=======
-            echo"la letra: ".$letra ." no pertenece a la palabra. QUEDAN ".$cantIntentos." Intentos \n";
->>>>>>> 5e181c2fa27e9de400976892969e4e1ddcfcb549
 
         }
         $palabraFueDescubierta=palabraDescubierta($descubiertas);

@@ -59,11 +59,10 @@ function cargarJuegos(){
 function dividirPalabraEnLetras($palabra){
         //string $palabraMin
         //array $coleccionLetras
-    //Completar para generar la estructura de datos b) indicada en el enunciado. 
-    // recuerde que los string pueden ser recorridos como los arreglos.  <<<*/
-    $palabraMin = strtolower($palabra);// utilizamos strtolowe para que este todo en minuscula.
-    $coleccionLetras  = []; //inicializamos un arreglo vacio.
-    for ($i=0; $i < strlen($palabraMin) ; $i++) { //strlen para obtener la longitud del string dado. 
+     
+     $palabraMin = strtolower($palabra);// utilizamos strtolowe para que este todo en minuscula.
+     $coleccionLetras  = []; //inicializamos un arreglo vacio.
+     for ($i=0; $i < strlen($palabraMin) ; $i++) { //strlen para obtener la longitud del string dado. 
         $coleccionLetras[$i] = ["letra" => $palabraMin[$i],"descubierta"=> false];//creamos un arreglo para guardar las letras de una palabra.
     }
     // saber si fueron descubiertas o no.
@@ -78,7 +77,6 @@ function seleccionarOpcion(){//punto 4
     //int $opcion
     
     
-    echo "--------------------------------------------------------------\n";
     dibujoAhoracado();
     echo "--------------------------------------------------------------\n";
     echo "\n ( 1 ) Jugar con una palabra aleatoria."; 
@@ -151,11 +149,11 @@ function existeLetra($coleccionLetras,$letra ){//punto 6
     $i=0;
     $cantLetras = count($coleccionLetras);//count — Cuenta todos los elementos de un array o algo de un objeto.
     $existe = false;
-    echo $cantLetras;
+    // saque el echo que mostraba la cantidad de letras
     while ($i < $cantLetras && !$existe) {
-             echo $coleccionLetras[$i]["letra"];
+            // echo $coleccionLetras[$i]["letra"];
         $existe = $coleccionLetras[$i]["letra"] == $letra;
-        echo $existe;
+        
         $i=$i+1;
     }
     
@@ -330,6 +328,7 @@ function jugar($coleccionPalabras, $indicePalabra, $cantIntentos){//punto 14
     // int $puntaje $cantIntentos
     $pal = $coleccionPalabras[$indicePalabra]["palabra"];
     $coleccionLetras = dividirPalabraEnLetras($pal);
+    $palDos =stringLetrasDescubiertas($coleccionLetras);
     //print_r($coleccionLetras);
     $puntaje = 0;
     /*>>> Completar el cuerpo de la función, respetando lo indicado en la documentacion <<<*/
@@ -466,7 +465,7 @@ function infoPrimerPuntaje($coleccionJuegos,$coleccionPalabras)// punto 19
  */
 function mostrarPorOrden($coleccionPalabras)// REVISAR punto 20 no se si esta bien ...
 {
-    asort($coleccionPalabras);//Ordena un array con una función de comparación definida por el usuario y mantiene la asociación de índices
+    asort($coleccionPalabras,"cmp");//Ordena un array con una función de comparación definida por el usuario y mantiene la asociación de índices
     print_r($coleccionPalabras);//informacion sobre los elementos del array de una manera legible
 }
 /**
@@ -474,7 +473,7 @@ function mostrarPorOrden($coleccionPalabras)// REVISAR punto 20 no se si esta bi
 * @param string $b
 * @return int
 */
-function cmp($a,$b){// punto 21 nose si nos piden esta funcion...
+function cmp($a,$b){// punto 21.
 
 
     if($a["puntosPalabra"] == $b["puntosPalabra"]){

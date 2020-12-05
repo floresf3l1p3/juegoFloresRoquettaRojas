@@ -464,8 +464,8 @@ function infoPrimerPuntaje($coleccionJuegos,$coleccionPalabras)// punto 19
  * @param array $coleccionPalabras
  */
 function mostrarPorOrden($coleccionPalabras)// REVISAR punto 20 no se si esta bien ...
-{
-    asort($coleccionPalabras,"cmp");//Ordena un array con una función de comparación definida por el usuario y mantiene la asociación de índices
+{   //saco el string "cmp" del asort
+    asort($coleccionPalabras);//Ordena un array con una función de comparación definida por el usuario y mantiene la asociación de índices
     print_r($coleccionPalabras);//informacion sobre los elementos del array de una manera legible
 }
 /**

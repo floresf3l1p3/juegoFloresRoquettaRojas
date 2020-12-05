@@ -465,26 +465,10 @@ function infoPrimerPuntaje($coleccionJuegos,$coleccionPalabras)// punto 19
  */
 function mostrarPorOrden($coleccionPalabras)// REVISAR punto 20 no se si esta bien ...
 {
-    asort($coleccionPalabras,"cmp");//Ordena un array con una función de comparación definida por el usuario y mantiene la asociación de índices
+    asort($coleccionPalabras,);//asort — Ordena un array y mantiene la asociación de índices, Esta función se utiliza principalmente para ordenar arrays asociativos en los que el orden es importante.
     print_r($coleccionPalabras);//informacion sobre los elementos del array de una manera legible
 }
-/**
-* @param string $a
-* @param string $b
-* @return int
-*/
-function cmp($a,$b){// punto 21.
 
-
-    if($a["puntosPalabra"] == $b["puntosPalabra"]){
-        $orden = 0;
-    }elseif($a["puntosPalabra"] > $b["puntosPalabra"]){
-        $orden = -1;
-    }else{
-        $orden = 1;
-    }
-    return $orden;
- }
 
 /******************************************/
 /************** PROGRAMA PRINCIAL *********/

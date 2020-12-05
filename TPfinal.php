@@ -46,7 +46,7 @@ function cargarJuegos(){
     /*>>> Agregar al menos 3 juegos realizados más <<<*/
     $coleccionJuegos[4] = array("puntos"=> 10, "indicePalabra" => 5);
     $coleccionJuegos[5] = array("puntos"=> 7, "indicePalabra" => 6);
-    $coleccionJuegos[6] = array("puntos"=> 8, "indicePalabra" => 7);
+    $coleccionJuegos[6] = array("puntos"=> 8, "indicePalabra" => 6);
 
     return $coleccionJuegos; //retornamos el array con los siguentes datos "puntos" y "indicePalabra"(estructura C).
 }

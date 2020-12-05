@@ -464,8 +464,8 @@ function infoPrimerPuntaje($coleccionJuegos,$coleccionPalabras)// punto 19
  * @param array $coleccionPalabras
  */
 function mostrarPorOrden($coleccionPalabras)// REVISAR punto 20 no se si esta bien ...
-{
-    asort($coleccionPalabras,);//asort — Ordena un array y mantiene la asociación de índices, Esta función se utiliza principalmente para ordenar arrays asociativos en los que el orden es importante.
+{   //saco el string "cmp" del asort
+    asort($coleccionPalabras);//Ordena un array con una función de comparación definida por el usuario y mantiene la asociación de índices
     print_r($coleccionPalabras);//informacion sobre los elementos del array de una manera legible
 }
 

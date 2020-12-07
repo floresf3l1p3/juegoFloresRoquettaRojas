@@ -440,7 +440,7 @@ function mostrarMayorPuntaje($coleccionJuegos,$coleccionPalabras)// punto 18
 function infoPrimerPuntaje($coleccionJuegos,$coleccionPalabras)// punto 19
 {
     //boolean $primerPalabra
-    //int $i, $cont, $inf1, $inf2, $inf3
+    //int $i, $cont, $puntosUsuario, $primerIndice
     $primerPalabra=false;
     echo"Ingrese puntaje a comparar: \n";
     $puntosUsuario=trim(fgets(STDIN));
@@ -448,7 +448,6 @@ function infoPrimerPuntaje($coleccionJuegos,$coleccionPalabras)// punto 19
     $i=0;
     do {
         if ($coleccionJuegos[$i]["puntos"]>$puntosUsuario) {
-            $inf1=$coleccionJuegos[$i]["puntos"];
             $primerIndice=$i;
             $primerPalabra=true;
         }else {

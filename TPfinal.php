@@ -440,7 +440,8 @@ function mostrarMayorPuntaje($coleccionJuegos,$coleccionPalabras)// punto 18
 function infoPrimerPuntaje($coleccionJuegos,$coleccionPalabras)// punto 19
 {
     //boolean $primerPalabra
-    //int $i, $cont, $puntosUsuario, $primerIndice
+    //int $i, $cont, $puntosUsuario, $primerIndice, $negativo
+    $negativo=-1;
     $primerPalabra=false;
     echo"Ingrese puntaje a comparar: \n";
     $puntosUsuario=trim(fgets(STDIN));
@@ -450,12 +451,16 @@ function infoPrimerPuntaje($coleccionJuegos,$coleccionPalabras)// punto 19
         if ($coleccionJuegos[$i]["puntos"]>$puntosUsuario) {
             $primerIndice=$i;
             $primerPalabra=true;
+            mostrarJuego($coleccionJuegos,$coleccionPalabras,$primerIndice);
         }else {
             $i=$i+1;
         }
     } 
     while (!$primerPalabra && $i<$cont);
-    mostrarJuego($coleccionJuegos,$coleccionPalabras,$primerIndice);
+    if (!$primerPalabra){
+        echo $negativo;
+    }
+    
 }
 /*>>> Implementar las funciones necesarias para la opcion 7 del menú <<<*/
 /**

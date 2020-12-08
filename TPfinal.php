@@ -15,7 +15,7 @@
 * genera un arreglo de palabras para jugar
 * @return array
 */
-function cargarPalabras(){
+function cargarPalabras(){ //punto 1 
     // array $coleccionPalabras
   $coleccionPalabras = array(); //inicializa el arreglo en vacio
   $coleccionPalabras[0]= array("palabra"=> "papa" , "pista" => "se cultiva bajo tierra\n", "puntosPalabra"=>4);
@@ -36,7 +36,7 @@ function cargarPalabras(){
  * @return array
  */
 
-function cargarJuegos(){
+function cargarJuegos(){ // punto 2 
     // array $coleccionJuegos
 	$coleccionJuegos = array();
 	$coleccionJuegos[0] = array("puntos"=> 4, "indicePalabra" => 1);
@@ -56,7 +56,7 @@ function cargarJuegos(){
 * @param string $palabra
 * @return array
 */
-function dividirPalabraEnLetras($palabra){
+function dividirPalabraEnLetras($palabra){// punto 3
         //string $palabraMin
         //array $coleccionLetras
      

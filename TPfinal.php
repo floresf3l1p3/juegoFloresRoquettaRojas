@@ -169,7 +169,7 @@ function existeLetra($coleccionLetras,$letra ){//punto 6
 /*>>> Completar la interfaz y cuerpo de la función. Debe respetar la documentación <<<*/
 function verificarPalabra($coleccionPalabras)//punto 7
 {
-    //string $esPalabra,$pal ,$palabra, $pista
+    //string $pal ,$palabra, $pista
     //int $compararPal, $puntaje ,$catindad
     echo"Ingrese una palabra: ";
     $palabraNueva = trim(fgets(STDIN));
@@ -196,8 +196,8 @@ function verificarPalabra($coleccionPalabras)//punto 7
 *@return int
 */
 function indiceAleatorioEntre($min,$max){//punto 8
-    //int $cantPal
-    //float $i
+    //int $i
+
     $i = rand($min,$max); // /*>>> documente qué hace la función rand según el manual php.net en internet <<<*/
     //rand — Genera un número entero aleatorio
     return $i;
@@ -295,9 +295,9 @@ function destaparLetra($coleccionLetras, $letra){// punto 12
 function stringLetrasDescubiertas($coleccionLetras){ //punto 13(probar)
     /*>>> Completar el cuerpo de la función, respetando lo indicado en la documentacion <<<*/
     // string $pal 
-    //boolean $val
+    //boolean $valor
     $pal = "";
-    $val= false;
+    $valor= false;
     
     foreach ($coleccionLetras as $indice => $valor) {
         if ($valor["descubierta"] == (!$valor)) {
@@ -324,11 +324,10 @@ function stringLetrasDescubiertas($coleccionLetras){ //punto 13(probar)
 function jugar($coleccionPalabras, $indicePalabra, $cantIntentos){//punto 14
     //string $pal , $letra , $letraDos
     //array $coleccionLetras, $descubiertas
-    //boolean $palDos $PalabraFueDescubierta, $existe
+    //boolean $PalabraFueDescubierta, $existe
     // int $puntaje $cantIntentos
     $pal = $coleccionPalabras[$indicePalabra]["palabra"];
     $coleccionLetras = dividirPalabraEnLetras($pal);
-    $palDos =stringLetrasDescubiertas($coleccionLetras);
     //print_r($coleccionLetras);
     $puntaje = 0;
     /*>>> Completar el cuerpo de la función, respetando lo indicado en la documentacion <<<*/
@@ -420,7 +419,7 @@ function mostrarJuego($coleccionJuegos,$coleccionPalabras,$indiceJuego){// punto
  */
 function mostrarMayorPuntaje($coleccionJuegos,$coleccionPalabras)// punto 18
 {
-    //int  $n1,$n2,$cont $indiceMayor
+    //int  $n1, $cont, $indiceMayor
     $n1=-1;
     $cont=count($coleccionJuegos);
     for ($i=0; $i < $cont ; $i++) { 
@@ -467,8 +466,8 @@ function infoPrimerPuntaje($coleccionJuegos,$coleccionPalabras)// punto 19
  * Mostrar la lista de palabras ordenads por orden alfabetico
  * @param array $coleccionPalabras
  */
-function mostrarPorOrden($coleccionPalabras)// REVISAR punto 20 no se si esta bien ...
-{   //saco el string "cmp" del asort
+function mostrarPorOrden($coleccionPalabras)//punto 20
+{   
     asort($coleccionPalabras);//Ordena un array con una función de comparación definida por el usuario y mantiene la asociación de índices
     print_r($coleccionPalabras);//informacion sobre los elementos del array de una manera legible
 }
